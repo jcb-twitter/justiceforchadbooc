@@ -238,7 +238,20 @@
 						<section class="box style1" style="width:100%">
 							<span class="icon featured fa-comments"></span>
 							<h3>Time Series Analysis</h3>
-							<p align="justify">blablabla</p>
+							<p align="center">
+								To determine what month and hour were most of the tweets came from, 
+								the following technique was done,
+							</p>
+							<div class = "row aln-center" style="padding-bottom: 1rem; ">
+								<div class = "col-6">
+									<section class="box style5" style="height:10rem; width:100%; background-color: #F6F1F1;">
+										<h4>Binning</h4>
+										<p align="justify" style="color:black;">
+											In order to group the tweets by month and hour, pandas' groupby was used on the Date Posted column. 
+										</p>
+									</section>
+								</div>
+							</div>
 						</section>
 					</div>
 					<footer>
@@ -250,7 +263,10 @@
 				<div class="container">
 					<header>
 						<h2>Visualization</h2>
-						<p>To get an idea of the possible insights we can draw from the data that we have, we created visualizations to see the existence of trends in our data.</p>
+						<p>
+							To get an idea of the possible insights we can draw from the data that we have, 
+							we created visualizations to see the existence of trends in our data.
+						</p>
 					</header>
 					<header>
 						<h3>
@@ -262,26 +278,28 @@
 					</header>
 					<div id="container">
 						<div class = "row" style="padding-bottom: 1rem;">
-							<div class = "col-6">
+							<div class = "col-12">
 								<section class="box style5" style="height:34rem; background-color: #ffffff;">
 									<img src="images/fig_histo_unigrams.png" alt="" style = "height: 23rem;">
-									<p align="justify" style="color:black;"> 
-										Figure 1: Histogram showing the top 15 bigrams in the tweet dataset. The x-axis displays the unigrams, while the y-axis represents the frequency of occurrence for each unigram.
+									<p align="center" style="color:black;"> 
+										Figure 1: Histogram showing the top 15 bigrams in the tweet dataset. 
+										The x-axis displays the unigrams, while the y-axis represents the frequency of occurrence for each unigram.
 									</p>
 								</section>
 							</div>
-							<div class = "col-6">
+							<div class = "col-12">
 								<section class="box style5" style="height:34rem; background-color: #ffffff;">
 									<img src="images/fig_histo_bigrams.png" alt="" style = "height: 23rem;">
-									<p align="justify" style="color:black;"> 
-										Figure 2: Histogram showing the top 10 bigrams in the tweet dataset. The x-axis displays the bigrams, while the y-axis represents the frequency of occurrence for each bigram.
+									<p align="center" style="color:black;"> 
+										Figure 2: Histogram showing the top 10 bigrams in the tweet dataset. 
+										The x-axis displays the bigrams, while the y-axis represents the frequency of occurrence for each bigram.
 									</p>
 								</section>
 							</div>
 							<div class = "col-12">
 								<section class="box style5" style="height:32rem; background-color: #ffffff;">
 									<img src="images/fig_wordcloud_tweets.png" alt="" style = "height: 25rem;">
-									<p align="justify" style="color:black;">
+									<p align="center" style="color:black;">
 										Figure 3: Word cloud visualizing the most frequently used words in the dataset.
 									</p>
 								</section>
@@ -292,10 +310,12 @@
 								<section class="box style5" style="height:80rem; background-color: #ffffff;">
 									<p>To infer the possible topics present among the tweets, the Latent Dirichlet Allocation (LDA) model was used. This model assumes that a dataset contains a mixture of multiple topics and that each topic is a distribution over words.</p>
 									<img src="images/fig_histo_lda.png" alt="" style = "height: 30rem;">
-									<p align="justify" style="color:black;"> 
-										Figure 4: Histogram showing the distribution of topics in the dataset using LDA topic modeling algorithm. The color scale represents the probability that a given word belongs to a specific topic.
+									<p align="center" style="color:black;"> 
+										Figure 4: Histogram showing the distribution of topics in the dataset using LDA topic modeling algorithm. 
+										The color scale represents the probability that a given word belongs to a specific topic.
 										<br/><br/>
-										Each topic is described by a collection of words commonly found when that topic is being discussed. Note that the words analyzed have been stemmed for better capturing of topics.
+										Each topic is described by a collection of words commonly found when that topic is being discussed. 
+										Note that the words analyzed have been stemmed for better capturing of topics.
 										<br/><br/>
 										These are the top 10 most common topics found:
 									</p>
@@ -365,6 +385,67 @@
 							</div>
 						</div>
 					</div>
+					<header>
+						<h3>
+							Time
+						</h3>
+						<p>
+							To analyze the time posted for the tweets, we made visualizations that 
+							show the most frequent month and hour that those tweets were posted by the users.
+						</p>
+					</header>
+					<div class = "row" style="padding-bottom: 1rem;">
+						<div class = "col-6">
+							<section class="box style5" style="height:34rem; background-color: #ffffff;">
+								<img src="images/fig_linegraph_month.png" alt="" style = "height: 23rem;">
+								<p align="center" style="color:black;"> 
+									Figure 5: Line graph showing the number of tweets per month. 
+									The x-axis displays the month, while the y-axis displays the number of tweets. 
+								</p>
+							</section>
+						</div>
+						<div class = "col-6">
+							<section class="box style5" style="height:34rem; background-color: #ffffff;">
+								<img src="images/fig_linegraph_hour.png" alt="" style = "height: 23rem;">
+								<p align="center" style="color:black;"> 
+									Figure 6: Line graph showing the number of tweets per hour. 
+									The x-axis displays the hour, while the y-axis displays the number of tweets. 
+								</p>
+							</section>
+						</div>
+					</div>
+
+					<header>
+						<h3>
+							Distribution of Types
+						</h3>
+						<p>
+							To analyze the content type and tweet type, we made visualizations that 
+							show the count for each type of content and tweet
+						</p>
+					</header>
+					<div class = "row" style="padding-bottom: 1rem;">
+						<div class = "col-6">
+							<section class="box style5" style="height:34rem; background-color: #ffffff;">
+								<img src="images/fig_bar_content.png" alt="" style = "height: 23rem;">
+								<p align="center" style="color:black;"> 
+									Figure 7: Bar plot showing the count of each content type. 
+									The x-axis displays the content type, while the y-axis displays the number of tweets. 
+								</p>
+							</section>
+						</div>
+						<div class = "col-6">
+							<section class="box style5" style="height:34rem; background-color: #ffffff;">
+								<img src="images/fig_bar_tweet.png" alt="" style = "height: 23rem;">
+								<p align="center" style="color:black;"> 
+									Figure 8: Bar plot showing the count of each tweet type. 
+									The x-axis displays the tweet type, while the y-axis displays the number of tweets. 
+								</p>
+
+							</section>
+						</div>
+					</div>
+
 					<footer>
 					</footer>
 				</div>
