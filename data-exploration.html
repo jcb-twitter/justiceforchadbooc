@@ -62,14 +62,91 @@
 						<p> 
 							For understanding purposes, a sample looks like this:
 						</p>
+						<br/>
+						<table style="margin: 0 auto; text-align: center; width: 1000px;">
+							<tr>
+							  <td style="width: 20%; text-align:right"><strong>tweet URL</strong></td>
+							  <td style="padding-left: 50px; text-align:left"><a hre="https://twitter.com/cebudailynews/status/1503586201114189824">https://twitter.com/cebudailynews/status/1503586201114189824</a></td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>account handle</strong></td>
+								<td style="padding-left: 50px; text-align:left">@cebudailynews</td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>account name</strong></td>
+								<td style="padding-left: 50px; text-align:left">CDN Digital</td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>account bio</strong></td>
+								<td style="padding-left: 50px; text-align:left">Cebu's only independent digital news portal</td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>account type</strong></td>
+								<td style="padding-left: 50px; text-align:left">Media</td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>joined</strong></td>
+								<td style="padding-left: 50px; text-align:left">6/23</td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>following</strong></td>
+								<td style="padding-left: 50px; text-align:left">669</td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>followers</strong></td>
+								<td style="padding-left: 50px; text-align:left">372036</td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>location</strong></td>
+								<td style="padding-left: 50px; text-align:left">NRA, Cebu City, Philippines</td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>tweet</strong></td>
+								<td style="padding-left: 50px; text-align:left">AFP: Ex-NPA members say Chad Booc was an NPA rebel <a href="https://t.co/3yw17RwMSd">https://t.co/3yw17RwMSd</a></td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>tweet type</strong></td>
+								<td style="padding-left: 50px; text-align:left">Text, URL</td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>date posted</strong></td>
+								<td style="padding-left: 50px; text-align:left">3/15/2022 4:17</td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>content type</strong></td>
+								<td style="padding-left: 50px; text-align:left">Rational</td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>likes</strong></td>
+								<td style="padding-left: 50px; text-align:left">0</td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>replies</strong></td>
+								<td style="padding-left: 50px; text-align:left">0</td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>retweets</strong></td>
+								<td style="padding-left: 50px; text-align:left">0</td>
+							</tr>
+							<tr>
+								<td style="width: 20%; text-align:right"><strong>quote tweets</strong></td>
+								<td style="padding-left: 50px; text-align:left">0</td>
+							</tr>
+						</table>
 					</header>
+					<header>
+						<p>
+							Here are the multiple ways we cleaned our data using preprocessing techniques.
+						</p>
+					</header>
+					
 					<div id="container">
 						<div class = "row" style="padding-bottom: 1rem;">
 							<div class = "col-6">
 								<section class="box style5" style="height:15rem;">
 									<h4>Handling missing values/ensuring no missing values</h4>
 									<p align="justify" style="color:black;"> 
-										Columns account bio and location have missing values. These missing values were replaced with 
+										Columns <strong>account bio</strong> and <strong>location</strong> have missing values. These missing values were replaced with 
 										empty strings to avoid errors in the next preprocessing steps.
 									</p>
 								</section>
@@ -78,7 +155,7 @@
 								<section class="box style5" style="height:15rem;">
 									<h4>Ensuring formatting consistency (date, labels, etc.)</h4>
 									<p align="justify" style="color:black;">
-										Columns joined and date posted contain date values. To standardize the dates and make them ready for 
+										Columns <strong>joined</strong> and <strong>date</strong> posted contain date values. To standardize the dates and make them ready for 
 										time series analyses, the string-type date values are converted to Date-type values with pandas’ date conversion function.
 									</p>
 								</section>
@@ -89,7 +166,7 @@
 								<section class="box style5" style="width:100%;">
 									<h4>Categorical data encoding</h4>
 									<p align="justify" style="color:black;">
-										Columns content type is a multicategorical feature: this means that a value under this column can contain multiple categories, 
+										Column <strong>content</strong> type is a multicategorical feature: this means that a value under this column can contain multiple categories, 
 										which are separated by commas (e.g., “Text, Reply, Image, URL, Video”). To draw analyses from such values, each string-type 
 										value is converted into a list of categories. And then one hot encoding is applied to convert these multicategorical values 
 										into numerical data, such that “Text” is converted to (1, 0, 0, 0, 0) and “Text, Reply, URL” is (1, 1, 0, 1, 0).
@@ -105,51 +182,52 @@
 							<p align="aln-center" style="color:black;">
 								To perform a topic analysis on the tweets collected, the following preprocessing techniques were performed on the tweet column:
 							</p>
-							<ul align="justify" style="color:black;">
-								<li>Converting tweets to string-type values</li>
-								<li>Replacing emojis with descriptions</li>
-								<li>Lower-casing of words</li>
-								<li>Removing URLs</li>
-								<li>Removing special symbols @’s and #’s</li>
-								<li>Removing alt-text-image descriptions</li>
-								<li>Removing quotation marks and punctuations</li>
-								<li>Removing newlines</li>
-								<li>Removing whitespaces</li>
-								<li>Removing stop words</li>
-								<li>Translating tweets from Filipino to English</li>
-							</ul>
+							<div style="margin: 0 auto; text-align: center; width: 400px;">
+								<ul align="justify" style="color:black;">
+									<li>Converting tweets to string-type values</li>
+									<li>Replacing emojis with descriptions</li>
+									<li>Lower-casing of words</li>
+									<li>Removing URLs</li>
+									<li>Removing special symbols @’s and #’s</li>
+									<li>Removing alt-text-image descriptions</li>
+									<li>Removing quotation marks and punctuations</li>
+									<li>Removing newlines</li>
+									<li>Removing whitespaces</li>
+									<li>Removing stop words</li>
+									<li>Translating tweets from Filipino to English</li>
+								</ul>
+							</div>	
 							<div id="container">
 								<div class = "row" style="padding-bottom: 1rem;">
 									<div class = "col-6">
-										<section class="box style5" style="height:20rem; background-color: #F6F1F1;">
+										<section class="box style5" style="height:22rem; background-color: #F6F1F1;">
 											<h4>Tokenization and lower casing</h4>
 											<p align="justify" style="color:black;"> 
-												In order to analyze the tweet effectively, the tweet's words are converted to lower-cased using Python's built-in
-												lower() function. To convert the tweet into small chunks of words, NLTK's word_tokenize() function is applied to each
+												In order to analyze the tweet effectively, the tweet's words are converted to lowercase using Python's built-in
+												<i>lower()</i> function. To convert the tweet into a list of individual words, NLTK's <i>word_tokenize()</i> function is applied to each
 												tweet. 
 											</p>
 										</section>
 									</div>
 									<div class = "col-6">
-										<section class="box style5" style="height:20rem; background-color: #F6F1F1;">
+										<section class="box style5" style="height:22rem; background-color: #F6F1F1;">
 											<h4>Stop words removal</h4>
 											<p align="justify" style="color:black;">
-												In order to get the important words to help the model only consider key features of the tweet, stop words 
-												are remove from the tweet. The stop words are removed using the stopwordsiso's stopwords function and for the
-												Bisaya language, digitalheir's cebuano-dictionary-js is used as shown in this 
-												<a href="https://github.com/digitalheir/cebuano-dictionary-js/blob/master/stop-words/stop-words.ts">GitHub Link</a>. 
-												If the tokens does not contain any word from the list of stopwords from stopwordsiso's Tagalog and English, they are
-												appended to a new list of filtered tokens.
+												In order to get the important words to help the model only consider key features of the tweet, stop words (e.g., articles like "the", pronouns like "they")
+												are removed from the tweet. The stop words are removed using the <i>stopwordsiso</i>'s stopwords function. For the removal of
+												Tagalog and Bisaya stop words, the stop-word dictionaries found in <a href="https://github.com/digitalheir/cebuano-dictionary-js/blob/master/stop-words/stop-words.ts">digitalheir's <i>cebuano-dictionary-js</i></a> and <a href="https://github.com/stopwords-iso/stopwords-tl">genediazjr's <i>stopwords-iso/stopwords-tl</i></a> were used.
 											</p>
 										</section>
 									</div>
 								</div>
 								<div class = "row aln-center" style="padding-bottom: 1rem; ">
 									<div class = "col-6">
-										<section class="box style5" style="height:15rem; width:100%; background-color: #F6F1F1;">
+										<section class="box style5" style="height:25rem; width:100%; background-color: #F6F1F1;">
 											<h4>Stemming and lemmatization</h4>
 											<p align="justify" style="color:black;">
-												
+												In order to analyze the emergence of topics among the collected tweets better, stemming and lemmatization are performed. Stemming reduces words to their base form by removing suffixes. For example, the word "happiness" can be stemmed to "happi".
+												On the other hand, lemmatization reduces words to their base form by taking into account the morphological context. For instance, the word "happiness" is lemmatized to "happy".
+												NLTK's library <i>PorterStemmer</i> and <i>WordNetLemmatizer</i> are used for this step.
 											</p>
 										</section>
 									</div>
@@ -172,8 +250,121 @@
 				<div class="container">
 					<header>
 						<h2>Visualization</h2>
-						<p>blabla</p>
+						<p>To get an idea of the possible insights we can draw from the data that we have, we created visualizations to see the existence of trends in our data.</p>
 					</header>
+					<header>
+						<h3>
+							Tweets
+						</h3>
+						<p>
+							To analyze the topics present amongst the tweets, we made visualizations that show the most frequent words that were used by users.
+						</p>
+					</header>
+					<div id="container">
+						<div class = "row" style="padding-bottom: 1rem;">
+							<div class = "col-6">
+								<section class="box style5" style="height:34rem; background-color: #ffffff;">
+									<img src="images/fig_histo_unigrams.png" alt="" style = "height: 23rem;">
+									<p align="justify" style="color:black;"> 
+										Figure 1: Histogram showing the top 15 bigrams in the tweet dataset. The x-axis displays the unigrams, while the y-axis represents the frequency of occurrence for each unigram.
+									</p>
+								</section>
+							</div>
+							<div class = "col-6">
+								<section class="box style5" style="height:34rem; background-color: #ffffff;">
+									<img src="images/fig_histo_bigrams.png" alt="" style = "height: 23rem;">
+									<p align="justify" style="color:black;"> 
+										Figure 2: Histogram showing the top 10 bigrams in the tweet dataset. The x-axis displays the bigrams, while the y-axis represents the frequency of occurrence for each bigram.
+									</p>
+								</section>
+							</div>
+							<div class = "col-12">
+								<section class="box style5" style="height:32rem; background-color: #ffffff;">
+									<img src="images/fig_wordcloud_tweets.png" alt="" style = "height: 25rem;">
+									<p align="justify" style="color:black;">
+										Figure 3: Word cloud visualizing the most frequently used words in the dataset.
+									</p>
+								</section>
+							</div>
+						</div>
+						<div class = "row" style="padding-bottom: 1rem;">
+							<div class = "col-12">
+								<section class="box style5" style="height:80rem; background-color: #ffffff;">
+									<p>To infer the possible topics present among the tweets, the Latent Dirichlet Allocation (LDA) model was used. This model assumes that a dataset contains a mixture of multiple topics and that each topic is a distribution over words.</p>
+									<img src="images/fig_histo_lda.png" alt="" style = "height: 30rem;">
+									<p align="justify" style="color:black;"> 
+										Figure 4: Histogram showing the distribution of topics in the dataset using LDA topic modeling algorithm. The color scale represents the probability that a given word belongs to a specific topic.
+										<br/><br/>
+										Each topic is described by a collection of words commonly found when that topic is being discussed. Note that the words analyzed have been stemmed for better capturing of topics.
+										<br/><br/>
+										These are the top 10 most common topics found:
+									</p>
+									<table style="margin: 0 auto; text-align: center; width: 1000px;">
+										<tr>
+											<td style="width: 20%; text-align:right"><strong>Topic 0</strong></td>
+											<td style="padding-left: 50px; text-align:left">
+												chad, booc, npa, teacher, justic, activist, support, student, soldier, recruit
+											</td>
+										</tr>
+										<tr>
+											<td style="width: 20%; text-align:right"><strong>Topic 1</strong></td>
+											<td style="padding-left: 50px; text-align:left">
+												booc, npa, chad, kill, cpp, ndf, terrorist, i, arm, die
+											</td>
+										</tr>
+										<tr>
+											<td style="width: 20%; text-align:right"><strong>Topic 2</strong></td>
+											<td style="padding-left: 50px; text-align:left">
+												chad, booc, npa, 😂, cpp, ndf, justic, friend, death, student
+											</td>
+										</tr>
+										<tr>
+											<td style="width: 20%; text-align:right"><strong>Topic 3</strong></td>
+											<td style="padding-left: 50px; text-align:left">
+												tweet, pattern, intellectu, observ, kakampinksconfus, moral, languag, behavior, bankruptci, perenni
+											</td>
+										</tr>
+										<tr>
+											<td style="width: 20%; text-align:right"><strong>Topic 4</strong></td>
+											<td style="padding-left: 50px; text-align:left">
+												npa, booc, chad, terrorist, cpp, teacher, ndf, recruit, sympath, communist
+											</td>
+										</tr>
+										<tr>
+											<td style="width: 20%; text-align:right"><strong>Topic 5</strong></td>
+											<td style="padding-left: 50px; text-align:left">
+												chad, booc, npa, dead, cpp, sympath, afp, countri, die, terrorist
+											</td>
+										</tr>
+										<tr>
+											<td style="width: 20%; text-align:right"><strong>Topic 6</strong></td>
+											<td style="padding-left: 50px; text-align:left">
+												npa, booc, chad, recruit, afp, tag, die, red, teacher, hero
+											</td>
+										</tr>
+										<tr>
+											<td style="width: 20%; text-align:right"><strong>Topic 7</strong></td>
+											<td style="padding-left: 50px; text-align:left">
+												chad, booc, npa, terrorist, encount, die, kill, communist, death, fool
+											</td>
+										</tr>
+										<tr>
+											<td style="width: 20%; text-align:right"><strong>Topic 8</strong></td>
+											<td style="padding-left: 50px; text-align:left">
+												npa, chad, booc, bro, peopl, cpp, victim, school, tell, afp
+											</td>
+										</tr>
+										<tr>
+											<td style="width: 20%; text-align:right"><strong>Topic 9</strong></td>
+											<td style="padding-left: 50px; text-align:left">
+												chad, booc, npa, die, davao, oro, encount, cpp, children, peopl
+											</td>
+										</tr>
+									</table>
+								</section>
+							</div>
+						</div>
+					</div>
 					<footer>
 					</footer>
 				</div>
