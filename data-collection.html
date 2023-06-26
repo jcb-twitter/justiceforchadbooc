@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>JCB | Data </title>
+		<title>JCB | Data Collection</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,10 +19,9 @@
 					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
 					<li><a href="problem-formulation.html">Problem Formulation</a></li>
-					<li><a href="data.html">Data</a></li>
-					<li><a href="data-exploration.html">Exploration</a></li>
-					<li><a href="methods.html">Methods</a></li>
-					<li><a href="results.html">Results</a></li>
+					<li><a href="data-collection.html">Data Collection</a></li>
+					<li><a href="data-exploration.html">Data Exploration</a></li>
+					<li><a href="data-modeling.html">Data Analysis</a></li>
 					<li><a href="team.html">Team</a></li>
 				</ul>
 			</nav>
@@ -35,10 +34,10 @@
 						</div>
 						<div class="col-8 col-7-large col-12-medium">
 							<header>
-								<h1><strong>Data</strong></h1>
+								<h1><strong>Data Collection</strong></h1>
 							</header>
 							<p> 
-								
+								To obtain our dataset, we mined Twitter for tweets containing specific keywords about Chad Booc.
 							</p>
 					</div>
 				</div>
@@ -46,23 +45,34 @@
 
             <article id="data" class="wrapper style3">
 				<div class="container">
-					<header>
-						<h2>We mined the internet for fake news data.</h2>
-						<p>Here's how we created our dataset.</p>
-					</header>
-					<div class="row">
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+					<div class="row aln-center">
+						<div class="col-6">
+							<article class="box style5" style="height:25rem;">
+								<img src="images/twitter.png" alt="" style = "width: 50%; height: 50%;" />
 								<h3><a href="#">Topic</a></h3>
 								<div style="text-align: left">
 									<p>We gathered tweets that specifically red-tag Chad Booc and label him as a terrorist or communist.</p>
 								</div>
 							</article>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+						<div class="col-6">
+							<article class="box style5" style="height:25rem;">
+								<img src="images/scrape.png" alt="" style = "width: 50%; height: 50%;" />
+								<h3><a href="#">Tools</a></h3>
+								<div style="text-align: left">
+									<p>
+										For the automated mining of tweets, we used <a href="https://github.com/JustAnotherArchivist/snscrape">snscraper</a>, 
+										which is a scraper for social networking services such as Twitter.
+									</p>
+								</div>	
+							</article>
+						</div>
+					</div>  
+					
+					<div class="row aln-center" style="padding-top: 3rem;">
+						<div class="col-6">
+							<article class="box style5" style="width: 30rem; height:37rem;">
+								<img src="images/keywords.png" alt="" style = "width: 45%; height: 40%;" />
 								<h3><a href="#">Keywords</a></h3>
 								<div style="text-align: left" align="justify">
 									<p>We mined tweets that can be found when the following keywords are searched:</p>
@@ -72,48 +82,15 @@
 											<li>chad booc terrorista</li>
 											<li>chad booc recruit</li>
 										</ul>
-									<p>Only tweets posted from 2016 to 2022 were collected.</p>
+									<p>Only tweets posted from January 1, 2016 to December 31, 2022 were collected.</p>
 								</div>
 	
 							</article>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								<h3><a href="#">Tools</a></h3>
-								<div style="text-align: left">
-									<p>
-										For the automated mining of tweets, we used <a href="https://github.com/JustAnotherArchivist/snscrape">snscraper</a>, which is a scraper for social networking services such as Twitter.
-									</p>
-								</div>
-								
-							</article>
-						</div>
-						<!-- <div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								<h3><a href="#">Tempus dolore</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-								<h3><a href="#">Feugiat aliquam</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<h3><a href="#">Sed amet ornare</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-					</div> -->
-					<!-- <footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-					</footer> -->
+					</div>  
+					<div class="row aln-center" style="padding-top: 3rem;">
+						<h3>We obtained a total of 151 tweets for the dataset!</h3>
+					</div>
 				</div>
 			</article>
 
