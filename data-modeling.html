@@ -37,7 +37,7 @@
 								<h1><strong>Data Analysis</strong></h1>
 							</header>
 							<p> 
-								
+								As we have our preprocessed data, we proceed to analyze the data and answer our hypothesis. 
 							</p>
 					</div>
 				</div>
@@ -54,10 +54,15 @@
 							<h3> Data Modeling </h3>
 							<p align="aln-center" style="color:black;"> 
 								To determine and analyze the reasons why Chad Booc is red-tagged by Twitter accounts, 
-								we clustered our 151 tweets into different topics using linear discriminant analysis 
+								we clustered our 151 tweets using natural language processing (NLP) into different topics using linear discriminant analysis 
 								(LDA) and t-Distributed Stochastic Neighbor Embedding (t-SNE).
 							</p>
-							<img src="images/topicclustering.png" alt="" style = "height: 23rem;">
+							<p style="color:black;">
+								To give a brief background, <br>
+								LDA is a topic modeling technique used to extract topics from a given corpus <br>
+								t-SNE is an unsupervised machine learning algorithm for visualization.
+							</p>
+							<img src="images/topicclustering.png" alt="" style = "height: 28rem;">
 							<p align="center" style="color:black;"> 
 								Figure 1: Topic clustering using LDA and t-SNE
 							</p>
@@ -87,17 +92,41 @@
 									<p style="color:#EB3F1B; font-weight: bold;">H<sub>0</sub> = The number of tweets per cluster does not have a significant difference with each other.</p>
 									<p style="color:#3F7A2D; font-weight: bold;">H<sub>1</sub> = The number of tweets per cluster does have a significant difference with each other.</p>
 							</div>
-							<img src="images/topicclustering.png" alt="" style = "height: 23rem;">
+							<img src="images/number of tweets to topic.png" alt="" style = "height: 23rem;">
 							<p align="center" style="color:black;"> 
 								Since the chi-square value (19.56) is greater than the critical value (13.28) at a 99% confidence interval and the p-value 
 								(0.0006) is also much smaller than the confidence level, we reject the null hypothesis. Therefore, there is a significant 
 								difference in the number of tweets among all clusters.
 							</p>
 							<p align="center" style="color:black;">
-								It can then be inferred that Topic 1 stands out with a significantly higher number of tweets compared to the other topics. 
+								It can then be inferred that <strong> Topic 1 </strong> stands out with a significantly higher number of tweets compared to the other topics. 
 							</p>
 							<p align="center" style="color:#EB3F1C; font-weight: bold;">
 								Significantly more tweets that red-tag Chad Booc accuse him of being an NPA recruiter.
+							</p>
+							<p align="center" style="color:black">
+								Additionally, from the figure above, the 2nd most common topic accuses Chad Booc of being a terrorist. 
+								And the top 3 topic associates Chad Booc with being a communist and a rebel.
+							</p>
+						</section>
+					</div>
+					<div class="row aln-center" style="padding-top: 3rem;">
+						<section class="box style1" style="width:100%">
+							<h3> Conclusion </h3>
+							<p align="center" style="color:black">
+								Chad Booc was red-tagged by Twitter accounts. They were accusing him of being an NPA recruiter, a terrorist, a communist, a rebel. 
+								He was also accused of carrying false beliefs & radical ideologies. Tweets also spread doubts on factual news about him.
+							</p>
+							<p align="center" style="color:black">
+								The results are heartbreaking for the team. Chad’s selfless heart to fight for 
+								the underserved should have never been met with such baseless accusations, 
+								or any form of injustice—let alone violence.
+							</p>
+							<p align="center" style="color:black">
+								Together in our own little ways, we continue to call for
+							</p>
+							<p align="center" style="color:#EB3F1C; font-weight: bold; font-size: 150%;" >
+								Justice for Chad Booc!
 							</p>
 						</section>
 					</div>
